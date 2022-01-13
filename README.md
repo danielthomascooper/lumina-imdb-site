@@ -3,7 +3,8 @@ We kindly ask you to solve the task below. By solving and submitting this assign
 
 
 ## The task
-- Build a service with PHP or JavaScript (NodeJs as webserver) as the server side language
+- Build a web application (client) with Javascript or Typescript as the client side language
+- Build an API service (server) with PHP or JavaScript (NodeJs as webserver) as the server side language
 - Use MySQL, MariaDB, PostgreSQL, SQL Server or SQLite as the database
 
 Build an SPA (Single Page Application) that shows everyone's favourite movies from database, it should at least show movie Title, Poster, and Plot synopsis using [OMDb API](https://www.omdbapi.com) or any other public movie API that supports IMDb ID (e.g. tt8526872)
@@ -20,6 +21,7 @@ You are not required to complete all of the bonus tasks, but great if you do! We
 - Use client side framework such as AngularJS, Angular, ReactJS, Vue, etc.
 - Add simple authentication for any user (or all users) and only authenticated user could view or edit their favourite movies. You could adjust the database structure if needed.
 - Add unit tests
+- Add Docker support  (Docker or Docker Compose). This allows us to run your solution in the same way as you.
 - Serve your solution somewhere on cloud hosting solution e.g. Heroku, DigitalOcean, etc. (just use the free tier one if available, we don't expect you to spend any money for hosting)
 - Any other improvement or modification (please add it into the readme and explain your reasoning of the improvement or modification)
 
