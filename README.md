@@ -4,7 +4,7 @@ We kindly ask you to solve the task below. By solving and submitting this assign
 
 ## The task
 - Build a web application (client) with Javascript or Typescript as the client side language
-- Build an API service (server) with PHP or JavaScript (NodeJs as webserver) as the server side language
+- Build an API service (server) with PHP or NodeJs as the server side technology
 - Use MySQL, MariaDB, PostgreSQL, SQL Server or SQLite as the database
 
 Build an SPA (Single Page Application) that shows everyone's favourite movies from database, it should at least show movie Title, Poster, and Plot synopsis using [OMDb API](https://www.omdbapi.com) or any other public movie API that supports IMDb ID (e.g. tt8526872)
