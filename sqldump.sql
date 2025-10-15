@@ -1,5 +1,5 @@
 CREATE TABLE users (
-  id int(11) NOT NULL,
+  id INTEGER PRIMARY KEY,
   firstName varchar(255) default NULL,
   lastName varchar(255) default NULL,
   favourite_movies varchar(255) default NULL

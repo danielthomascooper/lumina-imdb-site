@@ -1,3 +1,13 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!-- basic error handling template -->
+<html>
+    <head>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <img src="assets/sad_logo.svg" style="margin:auto; display:block; height: 40%"></img>
+        <h1>We're sorry, an error has occured</h1>
+        <h2><%= message %></h2>
+        <h3><%= error.status %></h3>
+        <pre><%= error.stack %></pre>
+    </body>
+</html>

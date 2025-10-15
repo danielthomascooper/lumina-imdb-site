@@ -6,62 +6,60 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <script src="/javascript/dropdown.js" defer></script>
+  <script src="/javascript/movietable.js" defer></script>
+  <script src="/javascript/users.js" defer></script>
 </head>
 
 <body>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to <%= title %>
-  </p>
+  <div class="site-container">
+    <div class="sidebar-container">
+      <img src="/assets/logo.svg" style="width:20%">
 
-  <script>
-    const compareStrings = (a, b) => {
-      if (a < b) return -1;
-      if (a > b) return 1;
+      <h1>
+        Favourite IMDB movies
+      </h1>
 
-      return 0;
-    }
+      <!-- div location for dropdown -->
+      <div class="dropdown">
+        <input type="text" placeholder="Search by name..." id="userSearch" oninput="updateDropdown()">
+        <!-- V hidden by default V -->
+        <div id="userDropdown" class="dropdown-content"> 
+          <ul id="usernameList">
 
-    const compare = (a, b) => {
-      const splitA = a.split(" ");
-      const splitB = b.split(" ");
-      const lastA = splitA[splitA.length - 1];
-      const lastB = splitB[splitB.length - 1];
+          </ul>
+        </div>
+      </div>
 
-      return lastA === lastB ?
-        compareStrings(splitA[0], splitB[0]) :
-        compareStrings(lastA, lastB);
-    }
+      <div class="user-options">
+        <p id="current-user"></p>
+        <ul id="user-option-list">
+          <!-- "selected-user-option" means it is hidden until there exists a current_user -->
+          <li id="add-movie" class="selected-user-option" onclick="addMovie()">
+            Add movie
+          </li>
+          <li id="add-user" class="default-user-option" onclick="addUser()">
+            Add user
+          </li>
+          <li id="remove-user" class="selected-user-option" onclick="removeUser()">
+            Remove user
+          </li>
+        </ul>
+      </div>
+    </div>
 
-    const userList = []
-    fetch('http://localhost:3000/movies?userlist')
-      .then((res) => res.json())
-      .then((res) => {
-        res.data.forEach(element => {
-          var full_name = element.firstName + " " + element.lastName
-          userList.push(full_name)
-        });
-        userList.sort(compare);
-      });
-  </script>
+    <!-- holder of movie table -->
+    <div class="movie-table-container">
+      <div class="movies">
+        <table id="movieTable">
 
-  <script>
-    function showList() {
-      document.getElementById("usernameList").classList.toggle("show");
-    }
-
-    function filterFunction() {
-      
-    }
-  </script>
-
-  <div>
-    <input type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()">
-    <ul id="usernameList">
-
-    </ul>
+        </table>
+      </div>
+    </div>
   </div>
+
+
 
 </body>
 

@@ -7,6 +7,11 @@ a {
   color: #00B7FF;
 }
 
+.sidebar-container {
+  max-width: 300px;
+  float:left;
+}
+
 /* Dropdown Button */
 .dropbtn {
   background-color: #04AA6D;
@@ -23,9 +28,9 @@ a {
 }
 
 /* The search field */
-#myInput {
+#userSearch {
   box-sizing: border-box;
-  background-image: url('searchicon.png');
+  background-image: url('https://www.w3schools.com/howto/searchicon.png');
   background-position: 14px 12px;
   background-repeat: no-repeat;
   font-size: 16px;
@@ -35,7 +40,33 @@ a {
 }
 
 /* The search field when it gets focus/clicked on */
-#myInput:focus {outline: 3px solid #ddd;}
+#userSearch:focus {outline: 3px solid #ddd;}
+
+/* The div containing the movie result table */
+.movies {
+  display: block;
+  overflow-x: auto;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px
+}
+
+/* The table to show the movie results */
+#movieTable {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px; 
+  border-color: lightgrey;
+}
+
+#movieTable th {
+  background-color: #b0fef0;
+  text-align: center;
+}
+
+#movieTable td {
+  text-align: center;
+}
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -50,11 +81,13 @@ a {
   background-color: #f6f6f6;
   min-width: 230px;
   border: 1px solid #ddd;
-  z-index: 1;
+  z-index: 2;
+  max-height: 200px;
+  overflow-y:auto;
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content li {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -62,7 +95,34 @@ a {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content li:hover {background-color: #f1f1f1}
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+/* Hide by user options that only apply if user is selected */
+.selected-user-option {
+  display: none;
+}
+
+/* Show by user options that only apply if user is selected */
+.default-user-option {
+  display: block;
+}
+
+/* Options list style settings */
+#user-option-list {
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+/* Option cell styles */
+#user-option-list li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+#user-option-list li:hover {background-color: #f1f1f1}
+
 .show {display:block;}
