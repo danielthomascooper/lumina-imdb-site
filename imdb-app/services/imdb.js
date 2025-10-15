@@ -1,4 +1,6 @@
 const config = require('../config');
+const cache = require('../services/cache');
+
 
 // wrapper for omdbapi, note api key exists in repository for testing purposes, should not be public generally (via .gitignore etc)
 async function getMovieInfo(code) {

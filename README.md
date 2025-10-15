@@ -17,6 +17,7 @@ I have the following file structure:
 ```
 imdb-app
 │   app.js
+|   cache.sqlite
 │   config.js
 │   my_db.sqlite
 │   package.json
@@ -77,7 +78,7 @@ I could implement a simple password authentication method, storing the salted ha
 
 #### Database improvements
 The provided schema has a number of issues with its design
-1. The primary key is just an incremented integer, when ideally we would have a unique identifier such as a username because
-2. The database cannot identify people sharing names, and so currently we only allow one list per name. This also works on the assuption people have exactly one first and one last name without spaces, and that the concept of first and last names apply to different cultures (see https://en.wikipedia.org/wiki/Personal_name#Eastern_name_order).
+1. The primary key is just an incremented integer, when ideally I would have a unique identifier such as a username because
+2. The database cannot identify people sharing names, and so currently I only allow one list per name. This also works on the assuption people have exactly one first and one last name without spaces, and that the concept of first and last names apply to different cultures (see https://en.wikipedia.org/wiki/Personal_name#Eastern_name_order).
 3. The favourite movies are stored as a 255 length string, this is a simple requirement to increase the length, but it may make more sense to have each user-movie combination on a new row, which also allows for easier access to information about movie codes without having to use string comprehension. This could also allow for different lists for each user, by creating tables for user information (username <-> first name, last name, etc), user lists (username <-> movie list), and list movies (movie list <-> movie code).
-4. We could cache the information obtained from the omdb database, only refreshing when stale. This would dramatically reduce calls to the API, improving loading speeds and reducing quota usage.
+4. We could cache the information obtained from the omdb database, only refreshing when stale. This would dramatically reduce calls to the API, improving loading speeds and reducing quota usage. I have included an SQL script of how to setup the database but have not yet added caching.

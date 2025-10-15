@@ -23,7 +23,7 @@
 
       <!-- div location for dropdown -->
       <div class="dropdown">
-        <input type="text" placeholder="Search by name..." id="userSearch" oninput="updateDropdown()">
+        <input type="text" placeholder="Search users..." id="userSearch" oninput="updateDropdown()">
         <!-- V hidden by default V -->
         <div id="userDropdown" class="dropdown-content"> 
           <ul id="usernameList">
@@ -37,7 +37,10 @@
         <ul id="user-option-list">
           <!-- "selected-user-option" means it is hidden until there exists a current_user -->
           <li id="add-movie" class="selected-user-option" onclick="addMovie()">
-            Add movie
+            Add movie by code
+          </li>
+          <li id="add-movie" class="selected-user-option" onclick="addMovieByIMDB()">
+            Add movie by IMDB link
           </li>
           <li id="add-user" class="default-user-option" onclick="addUser()">
             Add user
